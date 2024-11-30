@@ -9,8 +9,6 @@
 uint8_t R(float xn, float yn, uint8_t frame) {
     float val = ((xn-0.5) * (xn-0.5)) + ((yn-0.5) * (yn-0.5));
     if (val <= 0.15) {
-        //return yn * 255;
-        //return (yn / xn / xn / yn / xn + xn / yn * xn) * sin(yn) / sin(xn) * frame;
         return (xn / yn / yn / xn / yn + yn / xn * yn ) * sin(xn) / sin(yn) * frame / sin(xn) * 0.1 + 1;   
     }
     if (val > 0.1 && val <= 0.105) {
